@@ -1,0 +1,223 @@
+@use "../abstract/config" as *;
+@use "../abstract/variables/api" as *;
+@use "../abstract//mixins/api" as *;
+
+$header-height: 72px !default;
+$header-link-height: 27px !default;
+
+.#{$prefix}logo-small {
+  path {
+    fill: $text-color-primary;
+  }
+}
+
+.#{$prefix}header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-xl 64px;
+  background: rgba($bg-color-inverse, 0.6);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+  min-height: $header-height;
+}
+
+.#{$prefix}header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba($bg-color-inverse, 0.28) 0%,
+    rgba($bg-color-inverse, 0.06) 100%
+  );
+}
+
+.#{$prefix}header__left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.#{$prefix}header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xxl;
+  width: 100%;
+}
+
+.#{$prefix}header__nav-link {
+  color: $text-color-primary;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: $transition;
+  white-space: nowrap;
+  position: relative;
+  height: $header-link-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    bottom: 0;
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform $transition-duration $transition-animation 50ms;
+    background-color: $bg-color-brand;
+  }
+
+  &.active {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+
+  &:hover {
+    color: $bg-color-brand;
+
+    &:after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.#{$prefix}header__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: $spacing-md;
+}
+
+.#{$prefix}header__lang-select {
+  border: 0;
+  background: transparent;
+  color: $text-color-primary;
+  font-weight: $font-weight-semibold;
+  line-height: 1;
+  border-radius: 999px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.p-ham-nav {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@include respond-below(1250) {
+  .#{$prefix}header {
+    gap: $spacing-md;
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+  }
+
+  .#{$prefix}header__nav {
+    gap: $spacing-md;
+  }
+
+  .#{$prefix}header__nav-link span,
+  .p-header__lang-select,
+  .#{$prefix}header .p-btn {
+    font-size: $font-size-xs;
+  }
+}
+
+@include respond-below(md) {
+  .#{$prefix}header {
+    gap: $spacing-sm;
+    padding-left: $spacing-sm;
+    padding-right: $spacing-sm;
+  }
+
+  .#{$prefix}header__nav {
+    gap: $spacing-sm;
+  }
+
+  .#{$prefix}header__nav-link span,
+  .p-header__lang-select,
+  .#{$prefix}header .p-btn {
+    font-size: $font-size-xxs;
+  }
+  .p-header__right {
+    gap: $spacing-sm;
+  }
+
+  .p-header__left {
+    a {
+      width: 80px;
+    }
+    svg {
+      width: 100%;
+    }
+  }
+
+  .p-header .p-btn {
+    padding: $spacing-xs;
+    min-height: 27px;
+  }
+}
+
+@include respond-below(780) {
+  .p-header__left {
+    a {
+      width: 68px;
+    }
+  }
+}
+
+@include respond-above(sm) {
+  .p-ham-nav {
+    display: none;
+  }
+}
+
+@include respond-below(sm) {
+  .p-header {
+    min-height: 55px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .p-header__left {
+    a {
+      width: auto;
+    }
+  }
+  .p-header__nav,
+  .p-header__right .p-header__lang,
+  .p-header__right .p-btn {
+    display: none;
+  }
+
+  .p-ham-nav {
+    display: flex;
+  }
+
+  .p-header__right {
+    width: 100%;
+  }
+
+  .p-header__left svg {
+    width: inherit;
+  }
+}

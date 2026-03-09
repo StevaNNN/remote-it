@@ -1,0 +1,69 @@
+@use "../abstract/config" as *;
+@use "../abstract/variables/variables" as *;
+
+$button-border-radius: 999px !default;
+$button-border-width: 1px !default;
+
+$button-font-weight: $font-weight-semibold !default;
+
+$button-sm-height: 36px !default;
+$button-md-height: 42px !default;
+
+.#{$prefix}btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-md;
+  border-radius: $button-border-radius;
+  border: $button-border-width solid transparent;
+  font-size: $font-size-sm;
+  font-weight: $button-font-weight;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: $transition;
+
+  &:focus-visible {
+    outline: 2px solid $bg-color-brand;
+    outline-offset: 2px;
+  }
+}
+
+.#{$prefix}btn--sm {
+  padding: $spacing-sm $spacing-lg;
+  height: $button-sm-height;
+}
+
+.#{$prefix}btn--md {
+  padding: $spacing-md $spacing-lg;
+  height: $button-md-height;
+}
+
+.#{$prefix}btn--outline {
+  background-color: $bg-color-primary;
+  border-color: $text-color-primary;
+  color: $text-color-primary;
+
+  &:hover {
+    background-color: $bg-color-soft;
+  }
+}
+
+.#{$prefix}btn--brand {
+  background-color: $bg-color-brand;
+  color: $text-color-inverse;
+
+  &:hover {
+    box-shadow: 0 8px 20px rgb(0 79 224 / 28%);
+  }
+}
+
+.#{$prefix}btn--dark {
+  background-color: $text-color-primary;
+  color: $text-color-inverse;
+
+  &:hover {
+    background-color: color-mix(in srgb, $text-color-primary 88%, black);
+  }
+}

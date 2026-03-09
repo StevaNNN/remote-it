@@ -1,0 +1,69 @@
+@use "sass:map";
+
+@use "../functions/api" as *;
+@use "../config" as *;
+
+//--------------------------------------------------------------------------------------------------------------------//
+/// A map of breakpoints
+/// @group app-config
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+);
+//--------------------------------------------------------------------------------------------------------------------//
+/// Font families
+/// @group fonts
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+//--------------------------------------------------------------------------------------------------------------------//
+/// Font sizes
+/// @group fonts
+$font-size-xxs: 12px !default;
+$font-size-xs: 14px !default;
+$font-size-sm: 16px !default;
+$font-size-md: 18px !default;
+$font-size-lg: 22px !default;
+$font-size-xl: 32px !default;
+$font-size-2xl: 48px !default;
+$font-size-3xl: 62px !default;
+$font-size-4xl: 64px !default;
+$font-size-5xl: 72px !default;
+//--------------------------------------------------------------------------------------------------------------------//
+/// App transition setup
+/// @group app-config
+$transition-duration: 150ms !default;
+$transition-animation: ease-in-out !default;
+$transition:
+  transition(color), transition(background-color), transition(border-color),
+  transition(box-shadow) !default;
+//--------------------------------------------------------------------------------------------------------------------//
+/// Text colors
+/// @group colors
+$text-color-primary: #0f1012 !default;
+$text-color-inverse: #ffffff !default;
+$text-color-muted: #eef2f6 !default;
+$text-color-accent: #9cffcf !default;
+//--------------------------------------------------------------------------------------------------------------------//
+/// Background colors
+/// @group colors
+$bg-color-primary: #f6f7f8 !default;
+$bg-color-inverse: #ffffff !default;
+$bg-color-soft: #e6f9ff !default;
+$bg-color-brand: #004fe0 !default;
+//--------------------------------------------------------------------------------------------------------------------//
+/// Colors for gradient
+/// @group colors
+$text-gradient-color-1: #0065f4;
+$text-gradient-color-2: #be86f7;
+//--------------------------------------------------------------------------------------------------------------------//
+/// Colors for gradient
+/// @group spacing
+$spacing-xs: 4px !default;
+$spacing-sm: 8px !default;
+$spacing-md: 12px !default;
+$spacing-lg: 16px !default;
+$spacing-xl: 18px !default;
+$spacing-xxl: 24px !default;

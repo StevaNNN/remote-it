@@ -1,0 +1,22 @@
+@use "abstract/api" as *;
+@use "third-party/normalize";
+@use "components/button";
+@use "components/header";
+@use "components/sidemenu";
+
+html,
+body {
+  height: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "sfRegular";
+  overflow-x: hidden;
+  font-size: $font-size-sm;
+}

@@ -1,0 +1,58 @@
+@use "../abstract/config" as *;
+@use "../abstract/variables/api" as *;
+@use "../abstract//mixins/api" as *;
+
+$aside-menu-padding-x: 20px;
+$aside-menu-header-height: 55px;
+$aside-menu-nav-link-height: 78px;
+$aside-menu-nav-link-border-color: #c7d0d9;
+
+.p-aside-wrap {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.p-aside-menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.p-aside-menu-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 $aside-menu-padding-x;
+}
+
+.p-aside-header {
+  display: flex;
+  justify-content: space-between;
+  min-height: $aside-menu-header-height;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: rgba($bg-color-inverse, 0.6);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+  padding: 0 $aside-menu-padding-x;
+}
+
+.p-aside-menu-nav-link {
+  min-height: $aside-menu-nav-link-height;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  white-space: nowrap;
+  color: $text-color-primary;
+  text-decoration: none;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $aside-menu-nav-link-border-color;
+  }
+}

@@ -1,0 +1,41 @@
+@use "sass:map";
+@use "sass:string";
+
+/// map deep get
+/// @author Stevan Stojanovic
+/// @group functions
+/// @access public
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Key chain
+/// @return {*} - Desired value
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map.get($map, $key);
+  }
+
+  @return $map;
+}
+
+/// transition
+/// @author Stevan Stojanovic
+/// @group functions
+/// @access public
+/// @require {variable} $transition-duration
+/// @require {variable} $transition-animation
+/// @return {CSS property} css transition property if you want to use multiple transition just call this fn as many
+/// times as you need with comma separation
+/// @example
+///    .test { transition: transition(background-color), transition(color, 400ms, linear, 200ms); }
+///
+///     will result in:
+///
+///       .test { transition: background-color 200ms ease-in-out, color 400ms linear 200ms}
+@function transition(
+  $css-property: all,
+  $transition-duration: 150ms,
+  $transition-animation: ease-in-out,
+  $transition-delay: null
+) {
+  @return $css-property $transition-duration $transition-animation
+    $transition-delay;
+}
