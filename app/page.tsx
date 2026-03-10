@@ -14,7 +14,7 @@ export default async function Home({
   searchParams?: Promise<{ locale?: string }>;
 }) {
   const resolvedSearchParams = await searchParams;
-  const locale = await resolveLocale(resolvedSearchParams?.locale);
+  const locale = resolveLocale(resolvedSearchParams?.locale);
   const t = locale === "en" ? en : sr;
 
   return (
