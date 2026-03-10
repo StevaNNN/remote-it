@@ -23,3 +23,7 @@
   white-space: nowrap;
   border: 0;
 }
+
+.#{$prefix}text-default {
+  color: $text-color-primary;
+}

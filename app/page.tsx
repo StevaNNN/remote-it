@@ -4,7 +4,9 @@ import Header from "./components/Header";
 import { resolveLocale } from "./lib/i18n/locale";
 import en from "./lib/i18n/en/en";
 import sr from "./lib/i18n/sr/sr";
-import Sidemenu from "./components/sidemenu/Sidemenu";
+import HeroSection from "./sections/hero/HeroSection";
+import WhatSection from "./sections/what/WhatSection";
+import AISection from "./sections/ai/AISection";
 
 export default async function Home({
   searchParams,
@@ -14,12 +16,15 @@ export default async function Home({
   const resolvedSearchParams = await searchParams;
   const locale = await resolveLocale(resolvedSearchParams?.locale);
   const t = locale === "en" ? en : sr;
-  const navItems = t.header.nav.slice(0, 6);
 
   return (
     <>
-      <Header locale={locale} translation={t.header} />
-      <main></main>
+      <Header locale={locale} t={t} />
+      <main>
+        <HeroSection t={t} />
+        <WhatSection t={t} />
+        <AISection t={t} />
+      </main>
     </>
   );
 }

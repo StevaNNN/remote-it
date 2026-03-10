@@ -1,0 +1,18 @@
+.hero-section {
+  padding: 8rem 10rem;
+  gap: 6.8rem;
+}
+
+.hero-img {
+  width: min(100%, 600px);
+  max-width: 100%;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  border-radius: 2.4rem;
+}
+
+.text-wrap {
+  gap: 4rem;
+  max-width: 58.6rem;
+}

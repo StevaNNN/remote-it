@@ -76,6 +76,7 @@ const Text: FC<TextProps & PropsWithChildren> = ({
     getFontClassName(),
     {
       "p-text-gradient": textGradient,
+      "p-text-default": !textGradient,
     },
   );
   return createElement(htmlElement, { className: textCls, children });

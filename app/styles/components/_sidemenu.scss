@@ -1,58 +1,77 @@
 @use "../abstract/config" as *;
-@use "../abstract/variables/api" as *;
-@use "../abstract//mixins/api" as *;
+@use "../abstract/api" as *;
 
-$aside-menu-padding-x: 20px;
-$aside-menu-header-height: 55px;
-$aside-menu-nav-link-height: 78px;
+$aside-menu-padding-x: 2rem;
+$aside-menu-header-height: 5.5rem;
+$aside-menu-nav-link-height: 7.8rem;
 $aside-menu-nav-link-border-color: #c7d0d9;
 
-.p-aside-wrap {
+.#{$prefix}aside-wrap {
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   left: 0;
-  display: flex;
-  justify-content: flex-end;
+  z-index: 999;
+
+  &.is-closing {
+    .#{$prefix}aside-menu {
+      animation: slide-out-right 300ms ease 50ms both;
+    }
+  }
 }
 
-.p-aside-menu {
-  display: flex;
-  flex-direction: column;
+.#{$prefix}aside-menu {
   width: 100%;
+  background: rgba($bg-color-inverse, 0.6);
+  -webkit-backdrop-filter: blur(2rem) saturate(150%);
+  backdrop-filter: blur(2rem) saturate(150%);
+  animation: slide-in-right 300ms ease 50ms both;
 }
 
-.p-aside-menu-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+.#{$prefix}aside-menu-nav {
   padding: 0 $aside-menu-padding-x;
+  overflow-y: auto;
 }
 
-.p-aside-header {
-  display: flex;
-  justify-content: space-between;
+.#{$prefix}aside-header {
   min-height: $aside-menu-header-height;
-  align-items: center;
   position: sticky;
   top: 0;
-  background: rgba($bg-color-inverse, 0.6);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
   padding: 0 $aside-menu-padding-x;
 }
 
-.p-aside-menu-nav-link {
+.#{$prefix}aside-menu-nav-link {
   min-height: $aside-menu-nav-link-height;
-  display: flex;
-  align-items: center;
   width: 100%;
   white-space: nowrap;
   color: $text-color-primary;
   text-decoration: none;
+  position: relative;
+
+  &::after {
+    content: "";
+    bottom: 0;
+    height: 0.2rem;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform $transition-duration $transition-animation 50ms;
+    background-color: $bg-color-brand;
+  }
+
+  &:hover,
+  &.active {
+    color: $bg-color-brand;
+
+    &:after {
+      transform: scaleX(1);
+    }
+  }
 
   &:not(:last-of-type) {
-    border-bottom: 1px solid $aside-menu-nav-link-border-color;
+    border-bottom: 0.1rem solid $aside-menu-nav-link-border-color;
   }
 }

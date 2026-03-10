@@ -21,20 +21,20 @@ $font-weight-semibold: 600 !default;
 //--------------------------------------------------------------------------------------------------------------------//
 /// Font sizes
 /// @group fonts
-$font-size-xxs: 12px !default;
-$font-size-xs: 14px !default;
-$font-size-sm: 16px !default;
-$font-size-md: 18px !default;
-$font-size-lg: 22px !default;
-$font-size-xl: 32px !default;
-$font-size-2xl: 48px !default;
-$font-size-3xl: 62px !default;
-$font-size-4xl: 64px !default;
-$font-size-5xl: 72px !default;
+$font-size-xxs: 1.2rem !default;
+$font-size-xs: 1.4rem !default;
+$font-size-sm: 1.6rem !default;
+$font-size-md: 1.8rem !default;
+$font-size-lg: 2.2rem !default;
+$font-size-xl: 3.2rem !default;
+$font-size-2xl: 4.8rem !default;
+$font-size-3xl: 6.2rem !default;
+$font-size-4xl: 6.4rem !default;
+$font-size-5xl: 7.2rem !default;
 //--------------------------------------------------------------------------------------------------------------------//
 /// App transition setup
 /// @group app-config
-$transition-duration: 150ms !default;
+$transition-duration: 300ms !default;
 $transition-animation: ease-in-out !default;
 $transition:
   transition(color), transition(background-color), transition(border-color),
@@ -61,9 +61,9 @@ $text-gradient-color-2: #be86f7;
 //--------------------------------------------------------------------------------------------------------------------//
 /// Colors for gradient
 /// @group spacing
-$spacing-xs: 4px !default;
-$spacing-sm: 8px !default;
-$spacing-md: 12px !default;
-$spacing-lg: 16px !default;
-$spacing-xl: 18px !default;
-$spacing-xxl: 24px !default;
+$spacing-xs: 0.4rem !default;
+$spacing-sm: 0.8rem !default;
+$spacing-md: 1.2rem !default;
+$spacing-lg: 1.6rem !default;
+$spacing-xl: 1.8rem !default;
+$spacing-xxl: 2.4rem !default;

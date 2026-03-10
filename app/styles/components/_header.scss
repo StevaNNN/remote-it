@@ -2,8 +2,8 @@
 @use "../abstract/variables/api" as *;
 @use "../abstract//mixins/api" as *;
 
-$header-height: 72px !default;
-$header-link-height: 27px !default;
+$header-height: 7.2rem !default;
+$header-link-height: 2.7rem !default;
 
 .#{$prefix}logo-small {
   path {
@@ -14,13 +14,11 @@ $header-link-height: 27px !default;
 .#{$prefix}header {
   position: sticky;
   top: 0;
-  display: flex;
-  align-items: center;
   gap: $spacing-md;
-  padding: $spacing-xl 64px;
+  padding: $spacing-xl 6.4rem;
   background: rgba($bg-color-inverse, 0.6);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(2rem) saturate(150%);
+  backdrop-filter: blur(2rem) saturate(150%);
   min-height: $header-height;
 }
 
@@ -37,15 +35,7 @@ $header-link-height: 27px !default;
   );
 }
 
-.#{$prefix}header__left {
-  display: flex;
-  justify-content: flex-start;
-}
-
 .#{$prefix}header__nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: $spacing-xxl;
   width: 100%;
 }
@@ -58,29 +48,22 @@ $header-link-height: 27px !default;
   white-space: nowrap;
   position: relative;
   height: $header-link-height;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   &::after {
     content: "";
     bottom: 0;
-    height: 2px;
+    height: 0.2rem;
     position: absolute;
     width: 100%;
     left: 0;
     transform: scaleX(0);
+    transform-origin: left;
     transition: transform $transition-duration $transition-animation 50ms;
     background-color: $bg-color-brand;
   }
 
+  &:hover,
   &.active {
-    &:after {
-      transform: scaleX(1);
-    }
-  }
-
-  &:hover {
     color: $bg-color-brand;
 
     &:after {
@@ -90,9 +73,6 @@ $header-link-height: 27px !default;
 }
 
 .#{$prefix}header__right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
   gap: $spacing-md;
 }
 
@@ -115,11 +95,8 @@ $header-link-height: 27px !default;
   background: transparent;
   border: 0;
   padding: 0;
-  height: 48px;
-  width: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 4.8rem;
+  width: 4.8rem;
 }
 
 @include respond-below(1250) {
@@ -162,7 +139,7 @@ $header-link-height: 27px !default;
 
   .p-header__left {
     a {
-      width: 80px;
+      width: 8rem;
     }
     svg {
       width: 100%;
@@ -171,14 +148,15 @@ $header-link-height: 27px !default;
 
   .p-header .p-btn {
     padding: $spacing-xs;
-    min-height: 27px;
+    min-height: 2.7rem;
+    gap: $spacing-xs;
   }
 }
 
 @include respond-below(780) {
   .p-header__left {
     a {
-      width: 68px;
+      width: 6.8rem;
     }
   }
 }
@@ -191,11 +169,11 @@ $header-link-height: 27px !default;
 
 @include respond-below(sm) {
   .p-header {
-    min-height: 55px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-right: 20px;
-    padding-left: 20px;
+    min-height: 5.5rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
   }
 
   .p-header__left {
@@ -207,10 +185,6 @@ $header-link-height: 27px !default;
   .p-header__right .p-header__lang,
   .p-header__right .p-btn {
     display: none;
-  }
-
-  .p-ham-nav {
-    display: flex;
   }
 
   .p-header__right {

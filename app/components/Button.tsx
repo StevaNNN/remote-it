@@ -17,6 +17,9 @@ const Button: FC<ButtonProps & PropsWithChildren> = ({
   children,
 }) => {
   const buttonCls = clsx(
+    "d-i-flex",
+    "align-items-center",
+    "justify-content-center",
     "p-btn",
     `p-btn--${size}`,
     `p-btn--${variant}`,

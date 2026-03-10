@@ -3,8 +3,15 @@
 @use "components/button";
 @use "components/header";
 @use "components/sidemenu";
+@use "components/text";
+@use "sections/hero-section";
+@use "sections/what-we-do";
+@use "sections/ai-section";
 
-html,
+html {
+  font-size: 62.5%;
+}
+
 body {
   height: 100%;
 }
@@ -16,7 +23,23 @@ body {
 }
 
 body {
-  font-family: "sfRegular";
   overflow-x: hidden;
   font-size: $font-size-sm;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: $font-weight-normal;
+  margin: 0;
+}
+
+main {
+  max-width: 140rem;
+  margin: 0 auto;
 }

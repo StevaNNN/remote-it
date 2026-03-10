@@ -11,6 +11,7 @@
 
 .#{$prefix}text-md {
   font-size: $font-size-md;
+  line-height: 126%;
 }
 
 .#{$prefix}text-lg {
@@ -27,6 +28,8 @@
 
 .#{$prefix}text-3xl {
   font-size: $font-size-3xl;
+  line-height: 7.6rem;
+  font-weight: $font-weight-semibold;
 }
 
 .#{$prefix}text-4xl {
