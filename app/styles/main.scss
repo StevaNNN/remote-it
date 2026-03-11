@@ -41,17 +41,27 @@ p {
   margin: 0;
 }
 
-main {
-  max-width: 144rem;
-  margin: 0 auto;
-}
-
 .section {
   padding: 8rem 10rem;
+
+  @include respond-below(lg) {
+    padding-left: 6.4rem;
+    padding-right: 6.4rem;
+  }
+
+  @include respond-below(xs) {
+    padding: 8rem 2rem;
+  }
 }
 
 .section-title {
   @include respond-below(xs) {
     font-size: 3.6rem;
   }
+}
+
+.section-inner {
+  max-width: 144rem;
+  width: 100%;
+  margin: 0 auto;
 }

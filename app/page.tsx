@@ -18,7 +18,7 @@ export default function Home() {
       <Suspense>
         <Header locale={locale} t={t} />
       </Suspense>
-      <main>
+      <main className="v-box">
         <HeroSection t={t} />
         <WhatSection t={t} />
         <AISection t={t} />

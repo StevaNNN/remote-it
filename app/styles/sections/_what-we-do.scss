@@ -1,7 +1,9 @@
 @use "../abstract/api" as *;
 
 .what-section {
-  gap: 6.4rem;
+  .section-inner {
+    gap: 6.4rem;
+  }
 
   .section-header {
     gap: 2.4rem;
@@ -30,15 +32,10 @@
     width: 7.2rem;
     height: 7.2rem;
   }
-}
 
-@include respond-below(md) {
-  .what-section {
-    align-items: center;
-
-    &.section {
-      padding-left: 6.4rem;
-      padding-right: 6.4rem;
+  @include respond-below(md) {
+    .section-inner {
+      align-items: center;
     }
 
     .section-header,
@@ -46,14 +43,11 @@
       max-width: 49rem;
     }
   }
-}
 
-@include respond-below(xs) {
-  .what-section {
-    align-items: flex-start;
-
-    &.section {
-      padding: 8rem 2rem;
+  @include respond-below(xs) {
+    .section-inner {
+      align-items: flex-start;
+      gap: 4rem;
     }
 
     .section-header,
@@ -61,11 +55,19 @@
       max-width: 100%;
     }
 
-    .what-section .section-card {
+    .section-header {
+      gap: 1.6rem;
+
+      p {
+        font-size: 2rem;
+      }
+    }
+
+    .section-card {
       gap: 1.6rem;
     }
 
-    .what-section .section-cards {
+    .section-cards {
       gap: 4rem;
     }
 

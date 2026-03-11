@@ -28,33 +28,35 @@ const sectionCardData = (t: LocaleDictionary) => [
 const WhatSection: FC<WhatWeDoProps> = ({ t }) => {
   return (
     <section className=" section what-section v-box " id="what-we-do">
-      <div className="v-box section-header">
-        <Text
-          fontSize="2xl"
-          htmlElement="h3"
-          fontVariant="lineca"
-          className="section-title"
-        >
-          {t.whatSection.title}
-        </Text>
-        <Text fontSize="lg">{t.whatSection.paragraph}</Text>
-      </div>
-      <div className="section-cards h-box flex-wrap">
-        {sectionCardData(t).map((card, id) => {
-          return (
-            <div key={id} className="section-card v-box align-items-start">
-              <div className="card-icon-wrap v-box align-items-center justify-content-center">
-                <Icon width={60} height={60} name={card.icon as IconName} />
+      <div className="section-inner v-box">
+        <div className="v-box section-header">
+          <Text
+            fontSize="2xl"
+            htmlElement="h3"
+            fontVariant="lineca"
+            className="section-title"
+          >
+            {t.whatSection.title}
+          </Text>
+          <Text fontSize="lg">{t.whatSection.paragraph}</Text>
+        </div>
+        <div className="section-cards h-box flex-wrap">
+          {sectionCardData(t).map((card, id) => {
+            return (
+              <div key={id} className="section-card v-box align-items-start">
+                <div className="card-icon-wrap v-box align-items-center justify-content-center">
+                  <Icon width={60} height={60} name={card.icon as IconName} />
+                </div>
+                <div className="v-box card-text-wrap">
+                  <Text fontSize="xl" fontVariant="lineca">
+                    {card.title}
+                  </Text>
+                  <Text fontSize="md">{card.paragraph}</Text>
+                </div>
               </div>
-              <div className="v-box card-text-wrap">
-                <Text fontSize="xl" fontVariant="lineca">
-                  {t.whatSection["title"]}
-                </Text>
-                <Text fontSize="md">{t.whatSection["paragraph"]}</Text>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );

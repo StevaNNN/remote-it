@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 const HEADER_HEIGHT = 140;
-const SECTION_RATIO = 2.3;
+const SECTION_RATIO = 1.5; // smaller ratio flags in-view sooner
 
 const toSlug = (item: string) => item.toLowerCase().replaceAll(" ", "-");
 
@@ -23,6 +23,7 @@ export const useActiveSection = (navItems: string[]) => {
 
       for (const id of sectionIds) {
         const el = document.getElementById(id);
+
         if (!el) continue;
 
         if (isSectionInView(el)) {
