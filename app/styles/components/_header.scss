@@ -94,7 +94,7 @@ $header-link-height: 2.7rem !default;
   }
 }
 
-.p-ham-nav {
+.#{$prefix}ham-nav {
   cursor: pointer;
   background: transparent;
   border: 0;
@@ -115,8 +115,8 @@ $header-link-height: 2.7rem !default;
   }
 
   .#{$prefix}header__nav-link span,
-  .p-header__lang-select,
-  .#{$prefix}header .p-btn {
+  .#{$prefix}header__lang-select,
+  .#{$prefix}header .#{$prefix}btn {
     font-size: $font-size-xs;
   }
 }
@@ -133,15 +133,15 @@ $header-link-height: 2.7rem !default;
   }
 
   .#{$prefix}header__nav-link span,
-  .p-header__lang-select,
-  .#{$prefix}header .p-btn {
+  .#{$prefix}header__lang-select,
+  .#{$prefix}header .#{$prefix}btn {
     font-size: $font-size-xxs;
   }
-  .p-header__right {
+  .#{$prefix}header__right {
     gap: $spacing-sm;
   }
 
-  .p-header__left {
+  .#{$prefix}header__left {
     a {
       width: 8rem;
     }
@@ -150,29 +150,39 @@ $header-link-height: 2.7rem !default;
     }
   }
 
-  .p-header .p-btn {
+  .#{$prefix}header .#{$prefix}btn {
     padding: $spacing-xs;
     min-height: 2.7rem;
     gap: $spacing-xs;
   }
+
+  .#{$prefix}btn--sm.animate-button {
+    .#{$prefix}text {
+      font-size: $font-size-xs;
+    }
+
+    &:hover svg {
+      transform: rotate(45deg) translateX(-0.2rem) translateY(0.2rem);
+    }
+  }
 }
 
 @include respond-below(780) {
-  .p-header__left {
+  .#{$prefix}header__left {
     a {
       width: 6.8rem;
     }
   }
 }
 
-@include respond-above(sm) {
-  .p-ham-nav {
+@include respond-above(771) {
+  .#{$prefix}ham-nav {
     display: none;
   }
 }
 
 @include respond-below(sm) {
-  .p-header {
+  .#{$prefix}header {
     min-height: 5.5rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
@@ -180,22 +190,22 @@ $header-link-height: 2.7rem !default;
     padding-left: 2rem;
   }
 
-  .p-header__left {
+  .#{$prefix}header__left {
     a {
       width: auto;
     }
   }
-  .p-header__nav,
-  .p-header__right .p-header__lang,
-  .p-header__right .p-btn {
+  .#{$prefix}header__nav,
+  .#{$prefix}header__right .#{$prefix}header__lang,
+  .#{$prefix}header__right .#{$prefix}btn {
     display: none;
   }
 
-  .p-header__right {
+  .#{$prefix}header__right {
     width: 100%;
   }
 
-  .p-header__left svg {
+  .#{$prefix}header__left svg {
     width: inherit;
   }
 }

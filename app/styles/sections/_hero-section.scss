@@ -80,7 +80,7 @@
   }
 
   .text-wrap {
-    order: -1;
+    order: 1;
     max-width: 49rem;
   }
 
@@ -91,5 +91,34 @@
   .hero-img {
     max-width: unset;
     max-height: 46rem;
+  }
+}
+
+@include respond-below(xs) {
+  .hero-section {
+    &.section {
+      padding: 3.2rem 2rem 5.6rem 2rem;
+      gap: 4rem;
+      justify-content: flex-start;
+    }
+
+    .p-text-3xl {
+      font-size: 3.6rem;
+      line-height: 5.4rem;
+    }
+
+    .p-text-3xl,
+    .p-text-default {
+      max-width: 37rem;
+    }
+
+    .text-wrap {
+      max-width: 100%;
+      gap: 3.2rem;
+    }
+
+    .hero-img {
+      max-height: 51rem;
+    }
   }
 }

@@ -31,3 +31,49 @@
     height: 7.2rem;
   }
 }
+
+@include respond-below(md) {
+  .what-section {
+    align-items: center;
+
+    &.section {
+      padding-left: 6.4rem;
+      padding-right: 6.4rem;
+    }
+
+    .section-header,
+    .section-cards {
+      max-width: 49rem;
+    }
+  }
+}
+
+@include respond-below(xs) {
+  .what-section {
+    align-items: flex-start;
+
+    &.section {
+      padding: 8rem 2rem;
+    }
+
+    .section-header,
+    .section-cards {
+      max-width: 100%;
+    }
+
+    .what-section .section-card {
+      gap: 1.6rem;
+    }
+
+    .what-section .section-cards {
+      gap: 4rem;
+    }
+
+    .p-text-xl {
+      font-size: 2.8rem;
+    }
+    .p-text-md {
+      font-size: 1.6rem;
+    }
+  }
+}

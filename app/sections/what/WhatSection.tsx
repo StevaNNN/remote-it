@@ -29,7 +29,12 @@ const WhatSection: FC<WhatWeDoProps> = ({ t }) => {
   return (
     <section className=" section what-section v-box " id="what-we-do">
       <div className="v-box section-header">
-        <Text fontSize="2xl" htmlElement="h3" fontVariant="lineca">
+        <Text
+          fontSize="2xl"
+          htmlElement="h3"
+          fontVariant="lineca"
+          className="section-title"
+        >
           {t.whatSection.title}
         </Text>
         <Text fontSize="lg">{t.whatSection.paragraph}</Text>

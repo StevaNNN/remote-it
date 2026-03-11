@@ -1,58 +1,37 @@
 "use client";
 
 import Link from "next/link";
-import Button from "./Button";
-import Logo from "./Logo";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { routes } from "../routes";
+import { useActiveSection } from "../hooks/useActiveSection";
+import { useSidemenu } from "../hooks/useSidemenu";
+import { Locale } from "../lib/i18n/locale";
+import { LocaleDictionary } from "../lib/i18n/types";
+import Button from "./Button";
+import Logo from "./Logo";
 import Text from "./Text";
 import Icon from "./Icon";
 import Sidemenu from "./Sidemenu";
-import { Locale } from "../lib/i18n/locale";
-import { LocaleDictionary } from "../lib/i18n/types";
 
 export interface HeaderProps {
   locale: Locale;
   t: LocaleDictionary;
 }
 
-export type SidemenuState = "closed" | "open" | "closing";
-
 const toSlug = (item: string) => item.toLowerCase().replaceAll(" ", "-");
-const SIDEMENU_ANIMATION_MS = 350;
 
 const Header: FC<HeaderProps> = ({ locale, t }) => {
-  const [sidemenuState, setSidemenuState] = useState<SidemenuState>("closed");
-  const [activeHash, setActiveHash] = useState("");
-  const closeTimerRef = useRef<number | null>(null);
+  const navItems = t.header.nav.slice(0, 6);
+  const { activeHash, scrollToSection, scrollToTop } =
+    useActiveSection(navItems);
+  const sidemenu = useSidemenu();
+
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const navItems = t.header.nav.slice(0, 6);
-  const isSidemenuOpen = sidemenuState === "open";
-  const isSidemenuVisible = sidemenuState !== "closed";
-  const isSidemenuClosing = sidemenuState === "closing";
 
-  useEffect(() => {
-    const syncHash = () => setActiveHash(window.location.hash.replace("#", ""));
-    syncHash();
-    window.addEventListener("hashchange", syncHash);
-    return () => window.removeEventListener("hashchange", syncHash);
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768 && sidemenuState !== "closed") {
-        setSidemenuState("closed");
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [sidemenuState]);
-
-  const handleLocaleChange = (event: any) => {
+  const handleLocaleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const nextLocale = event.target.value as Locale;
     document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
     const params = new URLSearchParams(searchParams.toString());
@@ -60,62 +39,11 @@ const Header: FC<HeaderProps> = ({ locale, t }) => {
     router.push(`${pathname}?${params.toString()}`);
   };
 
-  const handleOpenSideMenu = () => {
-    if (closeTimerRef.current) {
-      window.clearTimeout(closeTimerRef.current);
-      closeTimerRef.current = null;
-    }
-
-    setSidemenuState("open");
-  };
-
-  const handleCloseSideMenu = () => {
-    if (sidemenuState === "closed" || sidemenuState === "closing") {
-      return;
-    }
-
-    setSidemenuState("closing");
-    closeTimerRef.current = window.setTimeout(() => {
-      setSidemenuState("closed");
-      closeTimerRef.current = null;
-    }, SIDEMENU_ANIMATION_MS);
-  };
-
-  useEffect(() => {
-    return () => {
-      if (closeTimerRef.current) {
-        window.clearTimeout(closeTimerRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isSidemenuOpen) {
-      return;
-    }
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        handleCloseSideMenu();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isSidemenuOpen]);
-
   return (
     <>
       <header className="p-header h-box align-items-center">
         <div className="p-header__left justify-content-start h-box">
-          <Logo ariaLabel={t.header.logo} />
+          <Logo ariaLabel={t.header.logo} onClick={scrollToTop} />
         </div>
 
         <nav
@@ -129,7 +57,10 @@ const Header: FC<HeaderProps> = ({ locale, t }) => {
                 key={item}
                 href={`/#${slug}`}
                 className={`h-box align-items-center justify-content-center p-header__nav-link${activeHash === slug ? " active" : ""}`}
-                onClick={() => setActiveHash(slug)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(slug);
+                }}
               >
                 <Text htmlElement="span">{item}</Text>
               </Link>
@@ -166,22 +97,22 @@ const Header: FC<HeaderProps> = ({ locale, t }) => {
             type="button"
             className="p-ham-nav h-box align-items-center justify-content-center"
             aria-label="Open menu"
-            aria-expanded={isSidemenuOpen}
-            onClick={handleOpenSideMenu}
+            aria-expanded={sidemenu.isOpen}
+            onClick={sidemenu.open}
           >
             <Icon name="ham-menu" />
           </button>
         </div>
       </header>
 
-      {isSidemenuVisible && (
+      {sidemenu.isVisible && (
         <Sidemenu
           items={navItems}
           activeHash={activeHash}
-          onActiveChange={setActiveHash}
-          isClosing={isSidemenuClosing}
-          t={{ header: { logo: t.header.logo } }}
-          onClose={handleCloseSideMenu}
+          onActiveChange={scrollToSection}
+          isClosing={sidemenu.isClosing}
+          t={t}
+          onClose={sidemenu.close}
         />
       )}
     </>

@@ -3,11 +3,12 @@ import { FC } from "react";
 
 export interface LogoProps {
   ariaLabel: string;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
-const Logo: FC<LogoProps> = ({ ariaLabel }) => {
+const Logo: FC<LogoProps> = ({ ariaLabel, onClick }) => {
   return (
-    <Link href={"/"} aria-label={ariaLabel}>
+    <Link href={"/"} aria-label={ariaLabel} onClick={onClick}>
       <svg
         width="121"
         height="26"

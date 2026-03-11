@@ -26,13 +26,19 @@ const HeroSection: FC<HeroSectionProps> = ({ t }) => {
           alt={t.heroSection.imagAlt}
         />
       </div>
-      <div className="v-box text-wrap align-items-start">
-        <Text fontVariant="lineca" htmlElement="h2" fontSize="3xl">
+      <div className="v-box text-wrap align-items-start justify-content-center">
+        <Text
+          fontVariant="lineca"
+          htmlElement="h2"
+          fontSize="3xl"
+          fontThickness="bold"
+        >
           <Text
             htmlElement="span"
             textGradient
             fontSize="3xl"
             fontVariant="lineca"
+            fontThickness="bold"
           >
             {t.heroSection.heroText1}
           </Text>{" "}

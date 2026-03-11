@@ -29,7 +29,8 @@ const Sidemenu: FC<SidemenuProps> = ({
   onClose,
 }) => {
   const handleMenuClick = (e: any) => e.stopPropagation();
-  const handleLinkClick = (slug: string) => {
+  const handleLinkClick = (slug: string, e: React.MouseEvent) => {
+    e.preventDefault();
     onActiveChange(slug);
     onClose();
   };
@@ -54,7 +55,7 @@ const Sidemenu: FC<SidemenuProps> = ({
                 key={item}
                 href={`/#${slug}`}
                 className={`h-box align-items-center p-aside-menu-nav-link${activeHash === slug ? " active" : ""}`}
-                onClick={handleLinkClick.bind(null, slug)}
+                onClick={(e) => handleLinkClick(slug, e)}
               >
                 <Text htmlElement="span" fontVariant="lineca" fontSize="lg">
                   {item}
@@ -69,7 +70,7 @@ const Sidemenu: FC<SidemenuProps> = ({
           size="md"
           variant={"brand"}
         >
-          <Text htmlElement="span">Contact</Text>
+          <Text htmlElement="span">{t.header.contact}</Text>
           <Icon name="arrow-right" width={20} height={20} color="#fff" />
         </Button>
       </div>
