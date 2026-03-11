@@ -20,6 +20,7 @@ $header-link-height: 2.7rem !default;
   -webkit-backdrop-filter: blur(2rem) saturate(150%);
   backdrop-filter: blur(2rem) saturate(150%);
   min-height: $header-height;
+  z-index: 2;
 }
 
 .#{$prefix}header::before {
