@@ -11,7 +11,9 @@ export type IconName =
   | "servers"
   | "arrow-right"
   | "ham-menu"
-  | "close";
+  | "close"
+  | "arrow-chevron-right"
+  | "arrow-chevron-left";
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, "color"> {
   name: IconName;
@@ -32,6 +34,8 @@ const iconViewBox: Record<IconName, string> = {
   "arrow-right": "0 0 29 29",
   "ham-menu": "0 0 24 24",
   close: "0 0 24 24",
+  "arrow-chevron-left": "0 0 20 20",
+  "arrow-chevron-right": "0 0 20 20",
 };
 
 const Icon: FC<IconProps> = ({
@@ -340,6 +344,45 @@ const Icon: FC<IconProps> = ({
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
+            />
+          </>
+        );
+
+      case "arrow-chevron-left":
+        return (
+          <>
+            <path
+              d="M15.8335 10L4.16683 10"
+              stroke={hasCustomColor ? "currentColor" : "#004FE0"}
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 15.834L4.16667 10.0007L10 4.16732"
+              stroke={hasCustomColor ? "currentColor" : "#004FE0"}
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </>
+        );
+      case "arrow-chevron-right":
+        return (
+          <>
+            <path
+              d="M4.1665 10H15.8332"
+              stroke={hasCustomColor ? "currentColor" : "#004FE0"}
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10 4.16602L15.8333 9.99935L10 15.8327"
+              stroke={hasCustomColor ? "currentColor" : "#004FE0"}
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             />
           </>
         );

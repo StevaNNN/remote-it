@@ -9,6 +9,7 @@ import HeroSection from "./sections/hero/HeroSection";
 import WhatSection from "./sections/what/WhatSection";
 import AISection from "./sections/ai/AISection";
 import WhoSection from "./sections/who/WhoSection";
+import CustomerSection from "./sections/customer/CustomerSection";
 
 export default function Home() {
   const locale = resolveLocale();
@@ -24,6 +25,7 @@ export default function Home() {
         <WhatSection t={t} />
         <AISection t={t} />
         <WhoSection t={t} />
+        <CustomerSection t={t} />
       </main>
     </>
   );
