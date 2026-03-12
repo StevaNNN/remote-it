@@ -59,11 +59,13 @@ const Slider: FC<SliderProps> = ({ data }) => {
             key={i}
           >
             <div className="slide-left v-box">
-              <Text fontVariant="lineca" fontSize="xl">
-                {d.title}
-              </Text>
-              <Text fontSize="md">{d.paragraph}</Text>
-              <Text className="flex-1">
+              <div className="flex-1 v-box justify-content-center top-text-wrap">
+                <Text fontVariant="lineca" fontSize="xl">
+                  {d.title}
+                </Text>
+                <Text fontSize="md">{d.paragraph}</Text>
+              </div>
+              <Text>
                 {i + 1} / {data.length}
               </Text>
             </div>

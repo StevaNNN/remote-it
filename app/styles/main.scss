@@ -68,4 +68,19 @@ p {
   max-width: 144rem;
   width: 100%;
   margin: 0 auto;
+  gap: 4rem;
+}
+
+.section-header {
+  gap: 2.4rem;
+
+  @include respond-below(xs) {
+    gap: 1.6rem;
+  }
+}
+
+.section-paragraph {
+  @include respond-below(xs) {
+    font-size: 2rem;
+  }
 }

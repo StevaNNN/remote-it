@@ -1,16 +1,47 @@
+@use "../abstract/api" as *;
+
 .establishment-section {
   .slider-slide {
     flex-direction: row-reverse;
+    background-color: #f6f7f8;
+
+    @include respond-below(784) {
+      flex-direction: column;
+      max-height: 100%;
+    }
+  }
+
+  .slide-left {
+    justify-self: flex-end;
+
+    @include respond-below(1300) {
+      padding-left: 10.3rem;
+    }
+
+    @include respond-below(784) {
+      padding-left: 0;
+    }
+  }
+
+  .top-text-wrap {
+    @include respond-below(784) {
+      justify-content: flex-start;
+    }
   }
 
   .slide-right {
     padding-left: 3.2rem;
+    padding-right: 0;
 
     .bg-graphic {
       background-image: url("../../resources//graphics/establishment.svg");
       left: 0;
       width: 674px;
       background-position: left;
+    }
+
+    @include respond-below(784) {
+      padding-left: 0;
     }
   }
 }

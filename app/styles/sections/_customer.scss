@@ -1,14 +1,15 @@
+@use "../abstract/api" as *;
+
 .customer-section {
   &.section {
     padding: 8rem 0;
   }
 
-  .section-inner {
-    gap: 4rem;
-  }
-
   .section-header {
-    gap: 2.4rem;
     text-align: center;
+
+    @include respond-below(xs) {
+      padding: 0 2rem;
+    }
   }
 }

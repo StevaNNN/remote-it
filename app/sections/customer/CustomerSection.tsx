@@ -50,7 +50,9 @@ const CustomerSection: FC<CustomerSectionProps> = ({ t }) => {
           >
             {t.customerSection.title}
           </Text>
-          <Text fontSize="lg">{t.customerSection.paragraph}</Text>
+          <Text fontSize="lg" className="section-paragraph">
+            {t.customerSection.paragraph}
+          </Text>
         </div>
         <Slider data={sliderData(t)} />
       </div>

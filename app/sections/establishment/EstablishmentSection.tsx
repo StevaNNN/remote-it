@@ -53,7 +53,9 @@ const EstablishmentSection: FC<EstablishmentSectionProps> = ({ t }) => {
           >
             {t.establishmentSection.title}
           </Text>
-          <Text fontSize="lg">{t.establishmentSection.paragraph}</Text>
+          <Text fontSize="lg" className="section-paragraph">
+            {t.establishmentSection.paragraph}
+          </Text>
         </div>
         <Slider data={sliderData(t)} />
       </div>

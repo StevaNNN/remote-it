@@ -38,7 +38,9 @@ const WhatSection: FC<WhatWeDoProps> = ({ t }) => {
           >
             {t.whatSection.title}
           </Text>
-          <Text fontSize="lg">{t.whatSection.paragraph}</Text>
+          <Text fontSize="lg" className="section-paragraph">
+            {t.whatSection.paragraph}
+          </Text>
         </div>
         <div className="section-cards h-box flex-wrap">
           {sectionCardData(t).map((card, id) => {

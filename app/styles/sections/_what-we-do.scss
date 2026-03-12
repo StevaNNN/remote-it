@@ -6,8 +6,6 @@
   }
 
   .section-header {
-    gap: 2.4rem;
-
     p {
       max-width: 85.9rem;
     }
@@ -59,14 +57,6 @@
     .section-header,
     .section-cards {
       max-width: 100%;
-    }
-
-    .section-header {
-      gap: 1.6rem;
-
-      p {
-        font-size: 2rem;
-      }
     }
 
     .section-card {

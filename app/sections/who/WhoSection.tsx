@@ -48,7 +48,9 @@ const WhoSection: FC<WhoSectionProps> = ({ t }) => {
           >
             {t.whoSection.title}
           </Text>
-          <Text fontSize="lg">{t.whoSection.paragraph}</Text>
+          <Text fontSize="lg" className="section-paragraph">
+            {t.whoSection.paragraph}
+          </Text>
         </div>
         <div className="section-cards h-box flex-wrap justify-content-center">
           {sectionCardData(t).map((card, id) => (

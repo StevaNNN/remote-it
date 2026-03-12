@@ -1,20 +1,5 @@
 @use "../abstract/api" as *;
 
-@property --border-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes draw-border {
-  from {
-    --border-angle: 0deg;
-  }
-  to {
-    --border-angle: 360deg;
-  }
-}
-
 .ai-section {
   background-color: $bg-color-primary;
 
@@ -23,8 +8,6 @@
   }
 
   .section-header {
-    gap: 2.4rem;
-
     p {
       max-width: 67.8rem;
     }
@@ -233,12 +216,6 @@
       max-width: 49rem;
     }
 
-    .ai-card__title {
-      p {
-        font-size: 1.6rem;
-      }
-    }
-
     .ai-card__subtitle,
     .ai-card__list li span {
       font-size: 1.2rem;
@@ -302,15 +279,7 @@
     }
 
     .section-header {
-      gap: 1.6rem;
       padding: 0 2rem;
-      p {
-        font-size: 2rem;
-      }
-    }
-
-    .section-title {
-      font-size: 3.6rem;
     }
 
     .ai-card__title {
