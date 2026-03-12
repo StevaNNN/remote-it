@@ -63,7 +63,9 @@ const AISection: React.FC<AISectionProps> = ({ t }) => {
           >
             {t.aiSection.title}
           </Text>
-          <Text fontSize="lg">{t.aiSection.paragraph}</Text>
+          <Text className="section-paragraph" fontSize="lg">
+            {t.aiSection.paragraph}
+          </Text>
         </div>
 
         <div className="ai-grid">

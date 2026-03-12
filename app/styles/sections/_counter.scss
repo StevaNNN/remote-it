@@ -2,7 +2,10 @@
 
 .counter-section {
   background-color: $bg-color-brand;
-  height: 34.8rem;
+
+  @include respond-above(xs) {
+    height: 34.8rem;
+  }
 
   p {
     &:first-of-type {
@@ -14,7 +17,20 @@
     }
   }
 
-  @include respond-below(sm) {
-    flex-direction: column;
+  .section-inner {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    text-align: center;
+    white-space: nowrap;
+
+    @include respond-below(1000) {
+      min-width: calc(50% - 2rem);
+    }
+
+    @include respond-below(xs) {
+      min-width: 100%;
+    }
   }
 }

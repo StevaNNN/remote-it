@@ -89,12 +89,15 @@ const CounterCard: FC<CounterCardConfig> = ({
 
 export const CounterSection: FC<CounterSectionProps> = ({ t }) => {
   return (
-    <div className="counter-section h-box align-items-center">
+    <section
+      className="section counter-section h-box align-items-center"
+      id="counter"
+    >
       <div className="section-inner h-box">
         {buildCounterData(t).map((c, i) => (
           <CounterCard key={i} {...c} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };

@@ -12,6 +12,7 @@ import WhoSection from "./sections/who/WhoSection";
 import CustomerSection from "./sections/customer/CustomerSection";
 import EstablishmentSection from "./sections/establishment/EstablishmentSection";
 import { CounterSection } from "./sections/counter/CounterSection";
+import CapabilitiesSection from "./sections/capatabilities/CapatabilitiesSection";
 
 export default function Home() {
   const locale = resolveLocale();
@@ -30,7 +31,9 @@ export default function Home() {
         <CustomerSection t={t} />
         <EstablishmentSection t={t} />
         <CounterSection t={t} />
+        <CapabilitiesSection t={t} />
       </main>
+      <footer></footer>
     </>
   );
 }

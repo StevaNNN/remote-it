@@ -141,6 +141,30 @@ const sr: LocaleDictionary = {
     text3: "More tips",
     text4: "Completed Orders",
   },
+  capabilities: {
+    title: "Key Capatabilities",
+    paragraph: "From ordering to payment to real-time operational insight.",
+    card1: {
+      boldText: "AI Powered",
+      text: "Flexible Ultra-Fast Payment Solution via Text or Voice",
+    },
+    card2: {
+      boldText: "AI Menu Intelligence",
+      text: "voice/text ordering; allergens, calories, budget fit",
+    },
+    card3: {
+      boldText: "Manager Goals → AI System Actions",
+      text: "“Push halibut before 9pm; offer bottle to 4+” Server AI Copilot— instant Q&A, pairings, timely upsell prompts",
+    },
+    card4: {
+      boldText: "Real-time AI Ops IQ",
+      text: "“How many specials left?” “Who hasn`t had dessert?”",
+    },
+    card5: {
+      boldText: "Checkout Guardrails: AI line-item verification",
+      text: "prevents disputes; Reviews: Voice → spoken feedback becomes structured scores routed to the right team + training AI generation",
+    },
+  },
 };
 
 export default sr;

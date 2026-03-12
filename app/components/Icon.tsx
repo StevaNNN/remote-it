@@ -13,7 +13,8 @@ export type IconName =
   | "ham-menu"
   | "close"
   | "arrow-chevron-right"
-  | "arrow-chevron-left";
+  | "arrow-chevron-left"
+  | "check";
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, "color"> {
   name: IconName;
@@ -36,6 +37,7 @@ const iconViewBox: Record<IconName, string> = {
   close: "0 0 24 24",
   "arrow-chevron-left": "0 0 20 20",
   "arrow-chevron-right": "0 0 20 20",
+  check: "0 0 24 24",
 };
 
 const Icon: FC<IconProps> = ({
@@ -367,6 +369,7 @@ const Icon: FC<IconProps> = ({
             />
           </>
         );
+
       case "arrow-chevron-right":
         return (
           <>
@@ -384,6 +387,38 @@ const Icon: FC<IconProps> = ({
               strokeLinecap="round"
               strokeLinejoin="round"
             />
+          </>
+        );
+
+      case "check":
+        return (
+          <>
+            <circle
+              cx="12"
+              cy="12"
+              r="12"
+              fill="url(#paint0_linear_3314_315)"
+            />
+            <path
+              d="M7 12.16L10.4375 16L17 8"
+              stroke={hasCustomColor ? "currentColor" : "#0F1012"}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_3314_315"
+                x1="38.5"
+                y1="-14"
+                x2="10"
+                y2="28.5"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#A0D4FF" />
+                <stop offset="1" stop-color="#9CFFCF" />
+              </linearGradient>
+            </defs>
           </>
         );
     }
