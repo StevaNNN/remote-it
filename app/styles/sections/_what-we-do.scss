@@ -3,16 +3,41 @@
 .what-section {
   .section-inner {
     gap: 6.4rem;
+
+    @include respond-below(xs) {
+      align-items: flex-start;
+      gap: 4rem;
+    }
   }
 
   .section-header {
     p {
       max-width: 85.9rem;
     }
+
+    @include respond-below(md) {
+      max-width: 49rem;
+    }
+
+    @include respond-below(sm) {
+      max-width: 100%;
+    }
   }
 
   .section-cards {
     gap: 8.4rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: grid;
+
+    @include respond-below(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include respond-below(sm) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      max-width: 100%;
+      gap: 4rem;
+    }
   }
 
   .card-text-wrap {
@@ -22,6 +47,18 @@
   .section-card {
     gap: 3.2rem;
     max-width: 35.7rem;
+
+    @include respond-below(md) {
+      justify-self: center;
+
+      &:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @include respond-below(xs) {
+      gap: 1.6rem;
+    }
   }
 
   .card-icon-wrap {
@@ -29,49 +66,5 @@
     border-radius: 1.8rem;
     width: 7.2rem;
     height: 7.2rem;
-  }
-
-  @include respond-below(1455) {
-    .section-cards {
-      justify-content: center;
-    }
-  }
-
-  @include respond-below(md) {
-    .section-cards {
-      align-items: center;
-    }
-
-    .section-header,
-    .section-cards {
-      max-width: 49rem;
-    }
-  }
-
-  @include respond-below(xs) {
-    .section-inner {
-      align-items: flex-start;
-      gap: 4rem;
-    }
-
-    .section-header,
-    .section-cards {
-      max-width: 100%;
-    }
-
-    .section-card {
-      gap: 1.6rem;
-    }
-
-    .section-cards {
-      gap: 4rem;
-    }
-
-    .p-text-xl {
-      font-size: 2.8rem;
-    }
-    .p-text-md {
-      font-size: 1.6rem;
-    }
   }
 }

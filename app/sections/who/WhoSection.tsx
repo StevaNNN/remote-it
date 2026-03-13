@@ -35,6 +35,11 @@ const sectionCardData = (t: LocaleDictionary) => [
   },
 ];
 
+const splitTitleByAmpersand = (title: string) => {
+  const [firstPart, secondPart] = title.split(/\s*&\s*/);
+  return { firstPart, secondPart };
+};
+
 const WhoSection: FC<WhoSectionProps> = ({ t }) => {
   return (
     <section className="section who-section v-box" id="who-it’s-for">
@@ -52,33 +57,41 @@ const WhoSection: FC<WhoSectionProps> = ({ t }) => {
             {t.whoSection.paragraph}
           </Text>
         </div>
-        <div className="section-cards h-box flex-wrap justify-content-center">
-          {sectionCardData(t).map((card, id) => (
-            <div key={id} className="who-card">
-              <div className="who-card-inner">
-                <div className="who-card-front">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                  />
-                  <Text
-                    fontSize="lg"
-                    fontVariant="lineca"
-                    className="who-card-title"
-                  >
-                    {card.title}
-                  </Text>
-                </div>
-                <div className="who-card-back">
-                  <Text fontSize="md" className="who-card-flip-text">
-                    {card.flipText}
-                  </Text>
+        <div className="section-cards">
+          {sectionCardData(t).map((card, id) => {
+            const { firstPart, secondPart } = splitTitleByAmpersand(card.title);
+            return (
+              <div key={id} className="who-card">
+                <div className="who-card-inner">
+                  <div className="who-card-front">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                    <Text
+                      fontSize="xl"
+                      fontVariant="lineca"
+                      className="who-card-title"
+                    >
+                      {firstPart + " &"}
+                      {
+                        <>
+                          <br /> {secondPart}
+                        </>
+                      }
+                    </Text>
+                  </div>
+                  <div className="who-card-back">
+                    <Text fontSize="md" className="who-card-flip-text">
+                      {card.flipText}
+                    </Text>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

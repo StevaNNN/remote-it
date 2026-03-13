@@ -3,128 +3,141 @@
 .who-section {
   .section-inner {
     gap: 6.4rem;
-  }
 
-  .section-cards {
-    gap: 2.4rem;
-  }
-
-  .who-card {
-    min-width: 29.2rem;
-    aspect-ratio: 3 / 4;
-    perspective: 800px;
-    cursor: pointer;
-    height: 357px;
-
-    &:hover .who-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    &:nth-of-type(odd) {
-      .who-card-back {
-        background-color: #e6f9ff;
-      }
-    }
-  }
-
-  .who-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 300ms ease-in-out;
-    transform-style: preserve-3d;
-  }
-
-  .who-card-front,
-  .who-card-back {
-    position: absolute;
-    inset: 0;
-    border-radius: 1.6rem;
-    overflow: hidden;
-    backface-visibility: hidden;
-  }
-
-  .who-card-front {
-    img {
-      object-fit: cover;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.5) 0%,
-        transparent 50%
-      );
-    }
-  }
-
-  .who-card-back {
-    transform: rotateY(180deg);
-    background-color: #efeeff;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2rem;
-    gap: 1.2rem;
-  }
-
-  .who-card-title {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    right: 2rem;
-    color: #fff;
-    z-index: 1;
-  }
-
-  .who-card-back .who-card-title {
-    position: static;
-  }
-
-  @include respond-below(751) {
-    .who-card {
-      min-width: 43rem;
-    }
-  }
-
-  @include respond-below(xs) {
-    .section-inner {
+    @include respond-below(xs) {
       gap: 4rem;
     }
 
-    .section-header {
-      p {
-        font-size: 2rem;
+    .section-cards {
+      gap: 2.4rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      display: grid;
+
+      @include respond-below(1350) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      @include respond-below(xs) {
+        gap: 2rem;
+      }
+
+      @include respond-below(751) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
       }
     }
 
-    .section-cards {
-      gap: 2rem;
-    }
-
     .who-card {
-      min-width: 35.3rem;
-      height: 300px;
+      min-width: 100%;
+      aspect-ratio: 3 / 4;
+      perspective: 800px;
+      cursor: pointer;
+      height: 357px;
+
+      @include respond-below(1350) {
+        min-width: 40rem;
+        justify-self: center;
+      }
+
+      @include respond-below(md) {
+        min-width: 100%;
+      }
+
+      @include respond-below(751) {
+        min-width: 43rem;
+      }
+
+      @include respond-below(xs) {
+        min-width: 35.3rem;
+        height: 300px;
+      }
+
+      @include respond-below(394) {
+        min-width: 30rem;
+        max-width: 30rem;
+      }
+
+      &:hover {
+        .who-card-inner {
+          transform: rotateY(180deg);
+        }
+
+        .who-card-title {
+          color: transparent;
+        }
+      }
+
+      &:nth-of-type(odd) {
+        .who-card-back {
+          background-color: #e6f9ff;
+        }
+      }
     }
 
-    .who-card-title {
-      bottom: 1.2rem;
-      left: 1.2rem;
-      right: 1.2rem;
+    .who-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 300ms ease-in-out;
+      transform-style: preserve-3d;
+    }
+
+    .who-card-front,
+    .who-card-back {
+      position: absolute;
+      inset: 0;
+      border-radius: 1.6rem;
+      overflow: hidden;
+      backface-visibility: hidden;
+    }
+
+    .who-card-front {
+      img {
+        object-fit: cover;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.5) 0%,
+          transparent 50%
+        );
+      }
     }
 
     .who-card-back {
-      padding: 1.2rem;
-    }
-  }
+      transform: rotateY(180deg);
+      background-color: #efeeff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+      gap: 1.2rem;
 
-  @include respond-below(394) {
-    .who-card {
-      min-width: 30rem;
-      max-width: 30rem;
+      @include respond-below(xs) {
+        padding: 1.2rem;
+      }
+    }
+
+    .who-card-title {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      right: 2rem;
+      color: #fff;
+      z-index: 1;
+
+      @include respond-below(xs) {
+        bottom: 1.2rem;
+        left: 1.2rem;
+        right: 1.2rem;
+      }
+    }
+
+    .who-card-back .who-card-title {
+      position: static;
     }
   }
 }
