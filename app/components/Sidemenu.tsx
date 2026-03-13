@@ -55,7 +55,7 @@ const Sidemenu: FC<SidemenuProps> = ({
             return (
               <Link
                 key={item}
-                href={`/#${slug}`}
+                href={`/${locale}/#${slug}`}
                 className={`h-box align-items-center p-aside-menu-nav-link${activeHash === slug ? " active" : ""}`}
                 onClick={(e) => handleLinkClick(slug, e)}
               >
@@ -68,7 +68,7 @@ const Sidemenu: FC<SidemenuProps> = ({
         </nav>
         <Button
           className="animate-button sidemenu-action-btn"
-          href={routes.contact}
+          href={`/${locale}${routes.contact}`}
           size="md"
           variant={"brand"}
         >
