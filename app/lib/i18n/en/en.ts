@@ -200,6 +200,28 @@ const en = {
     message: "Write your query here",
     submitBtn: "Submit",
   },
+  metadata: {
+    title: "PeyClub — AI-Powered Hospitality Payments & Ordering",
+    description:
+      "PeyClub helps restaurants and on-premise businesses move faster with AI-powered ordering, instant payments, and real-time insights — all in one platform.",
+    keywords: [
+      "PeyClub",
+      "AI ordering",
+      "hospitality payments",
+      "restaurant AI",
+      "contactless payment",
+      "Apple Pay",
+      "Google Pay",
+      "QR ordering",
+      "voice ordering",
+      "real-time insights",
+      "restaurant management",
+      "fast payment",
+      "AI 360",
+    ],
+    ogLocale: "en_US",
+    ogAlternateLocale: "sr_RS",
+  },
 };
 
 export default en;

@@ -1,6 +1,9 @@
 @use "../abstract/api" as *;
 
 .hero-section {
+  &.section {
+    opacity: 1;
+  }
   .section-inner {
     gap: 6.4rem;
   }

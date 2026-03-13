@@ -2,7 +2,7 @@
 
 import Text from "@/app/components/Text";
 import { LocaleDictionary } from "@/app/lib/i18n/types";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 
 export interface CounterSectionProps {
   t: LocaleDictionary;
@@ -38,10 +38,20 @@ const buildCounterData = (t: LocaleDictionary): CounterCardConfig[] => {
   });
 };
 
-const useCountUp = (target: number, incrementDelay = 50, startDelay = 0) => {
+const useCountUp = (
+  target: number,
+  incrementDelay = 50,
+  startDelay = 0,
+  active = false,
+) => {
   const [value, setValue] = useState(0);
 
   useEffect(() => {
+    if (!active) {
+      setValue(0);
+      return;
+    }
+
     setValue(0);
 
     let intervalId: ReturnType<typeof setInterval> | undefined;
@@ -62,18 +72,24 @@ const useCountUp = (target: number, incrementDelay = 50, startDelay = 0) => {
       clearTimeout(timeoutId);
       if (intervalId) clearInterval(intervalId);
     };
-  }, [target, incrementDelay, startDelay]);
+  }, [target, incrementDelay, startDelay, active]);
 
   return value;
 };
 
-const CounterCard: FC<CounterCardConfig> = ({
+const CounterCard: FC<CounterCardConfig & { active: boolean }> = ({
   percentage,
   text,
   incrementDelay,
   startDelay,
+  active,
 }) => {
-  const animatedValue = useCountUp(percentage, incrementDelay, startDelay);
+  const animatedValue = useCountUp(
+    percentage,
+    incrementDelay,
+    startDelay,
+    active,
+  );
 
   return (
     <div className="card flex-1 v-box align-items-center justify-content-center">
@@ -88,14 +104,33 @@ const CounterCard: FC<CounterCardConfig> = ({
 };
 
 export const CounterSection: FC<CounterSectionProps> = ({ t }) => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setActive(entry.isIntersecting);
+      },
+      { threshold: 0.25 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       className="section counter-section h-box align-items-center"
       id="counter"
     >
       <div className="section-inner h-box">
         {buildCounterData(t).map((c, i) => (
-          <CounterCard key={i} {...c} />
+          <CounterCard key={i} {...c} active={active} />
         ))}
       </div>
     </section>

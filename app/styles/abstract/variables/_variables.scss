@@ -54,6 +54,35 @@ $bg-color-inverse: #ffffff !default;
 $bg-color-soft: #e6f9ff !default;
 $bg-color-brand: #004fe0 !default;
 //--------------------------------------------------------------------------------------------------------------------//
+/// Border / divider colors
+/// @group colors
+$color-border: #c7d0d9 !default;
+$color-divider: #d7d7d7 !default;
+//--------------------------------------------------------------------------------------------------------------------//
+/// Extended text colors
+/// @group colors
+$text-color-secondary: #737373 !default;
+//--------------------------------------------------------------------------------------------------------------------//
+/// Card surface colors
+/// @group colors
+$color-card-accent-purple: #efeeff !default;
+//--------------------------------------------------------------------------------------------------------------------//
+/// Button colors
+/// @group colors
+$color-deep-teal: #072929 !default;
+//--------------------------------------------------------------------------------------------------------------------//
+/// AI section palette
+/// @group colors
+$color-ai-gradient-start: #ae7aff !default;
+$color-ai-gradient-end: #7ce0ff !default;
+$color-ai-connector: #98a7ff !default;
+$color-ai-line-from: #61b5e7 !default;
+$color-ai-line-to: #a3bcff !default;
+$color-dot-top: #64b5e8 !default;
+$color-dot-right: #9095f5 !default;
+$color-dot-bottom: #4ec3e1 !default;
+$color-dot-left: #7ce0ff !default;
+//--------------------------------------------------------------------------------------------------------------------//
 /// Colors for gradient
 /// @group colors
 $text-gradient-color-1: #0065f4;

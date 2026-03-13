@@ -207,6 +207,28 @@ const sr: LocaleDictionary = {
     message: "Napišite vaš upit ovde",
     submitBtn: "Pošalji",
   },
+  metadata: {
+    title: "PeyClub — AI platforma za ugostiteljska plaćanja i naručivanje",
+    description:
+      "PeyClub pomaže restoranima i ugostiteljskim objektima da rade brže uz AI naručivanje, trenutna plaćanja i uvide u realnom vremenu — sve na jednoj platformi.",
+    keywords: [
+      "PeyClub",
+      "AI naručivanje",
+      "ugostiteljska plaćanja",
+      "AI restoran",
+      "beskontaktno plaćanje",
+      "Apple Pay",
+      "Google Pay",
+      "QR naručivanje",
+      "glasovno naručivanje",
+      "uvidi u realnom vremenu",
+      "upravljanje restoranom",
+      "brzo plaćanje",
+      "AI 360",
+    ],
+    ogLocale: "sr_RS",
+    ogAlternateLocale: "en_US",
+  },
 };
 
 export default sr;

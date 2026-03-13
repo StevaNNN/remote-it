@@ -3,7 +3,7 @@
 .establishment-section {
   .slider-slide {
     flex-direction: row-reverse;
-    background-color: #f6f7f8;
+    background-color: $bg-color-primary;
 
     @include respond-below(784) {
       flex-direction: column;

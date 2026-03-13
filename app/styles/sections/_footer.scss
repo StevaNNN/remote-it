@@ -1,9 +1,11 @@
 @use "../abstract/api" as *;
 
 .footer-section {
-  border-top: 1px solid #d7d7d7;
+  border-top: 1px solid $color-divider;
+
   &.section {
     padding: 0;
+    opacity: 1;
   }
 
   a {
@@ -11,7 +13,7 @@
     text-align: left;
 
     p {
-      color: #737373;
+      color: $text-color-secondary;
       text-align: center;
       line-height: 120%;
       white-space: nowrap;
@@ -43,7 +45,7 @@
   }
 
   .section-bottom {
-    border-top: 1px solid #d7d7d7;
+    border-top: 1px solid $color-divider;
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 7.2rem;

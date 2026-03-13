@@ -68,7 +68,7 @@
 
       &:nth-of-type(odd) {
         .who-card-back {
-          background-color: #e6f9ff;
+          background-color: $bg-color-soft;
         }
       }
     }
@@ -109,7 +109,7 @@
 
     .who-card-back {
       transform: rotateY(180deg);
-      background-color: #efeeff;
+      background-color: $color-card-accent-purple;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -126,7 +126,7 @@
       bottom: 2rem;
       left: 2rem;
       right: 2rem;
-      color: #fff;
+      color: $bg-color-inverse;
       z-index: 1;
 
       @include respond-below(xs) {

@@ -6,12 +6,12 @@ $button-border-width: 0.1rem !default;
 
 $button-font-weight: $font-weight-semibold !default;
 
-$button-outline-color: #072929 !default;
+$button-outline-color: $color-deep-teal !default;
 
 $button-sm-height: 3.6rem !default;
 $button-md-height: 4.2rem !default;
 
-$button-animation: all 300ms ease-in-out !default;
+$button-animation: all $transition-duration $transition-animation !default;
 
 .#{$prefix}btn {
   gap: $spacing-md;

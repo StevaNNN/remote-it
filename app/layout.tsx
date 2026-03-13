@@ -4,26 +4,9 @@ import "./styles/main.scss";
 
 export const metadata: Metadata = {
   title: {
-    default: "PeyClub — AI-Powered Hospitality Payments & Ordering",
+    default: "PeyClub",
     template: "%s | PeyClub",
   },
-  description:
-    "PeyClub helps restaurants and on-premise businesses move faster with AI-powered ordering, instant payments, and real-time insights — all in one platform.",
-  keywords: [
-    "PeyClub",
-    "AI ordering",
-    "hospitality payments",
-    "restaurant AI",
-    "contactless payment",
-    "Apple Pay",
-    "Google Pay",
-    "QR ordering",
-    "voice ordering",
-    "real-time insights",
-    "restaurant management",
-    "fast payment",
-    "AI 360",
-  ],
   authors: [{ name: "PeyClub" }],
   creator: "PeyClub",
   publisher: "PeyClub",
@@ -33,22 +16,6 @@ export const metadata: Metadata = {
       en: "/en",
       sr: "/sr",
     },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    alternateLocale: "sr_RS",
-    siteName: "PeyClub",
-    title: "PeyClub — AI-Powered Hospitality Payments & Ordering",
-    description:
-      "PeyClub helps restaurants and on-premise businesses move faster with AI-powered ordering, instant payments, and real-time insights — all in one platform.",
-    url: "https://peyclub.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "PeyClub — AI-Powered Hospitality Payments & Ordering",
-    description:
-      "PeyClub helps restaurants and on-premise businesses move faster with AI-powered ordering, instant payments, and real-time insights — all in one platform.",
   },
   robots: {
     index: true,

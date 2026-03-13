@@ -4,7 +4,7 @@
 $aside-menu-padding-x: 2rem;
 $aside-menu-header-height: 5.5rem;
 $aside-menu-nav-link-height: 7.8rem;
-$aside-menu-nav-link-border-color: #c7d0d9;
+$aside-menu-nav-link-border-color: $color-border;
 
 .#{$prefix}aside-wrap {
   height: 100%;

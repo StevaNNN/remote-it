@@ -5,10 +5,42 @@ import sr from "@/app/lib/i18n/sr/sr";
 import { Suspense } from "react";
 import Header from "@/app/components/Header";
 import FooterSection from "@/app/sections/footer/FooterSection";
-import type { Locale } from "@/app/lib/i18n/locale";
+import type { Metadata } from "next";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale: localeParam } = await params;
+  const locale = resolveLocale(localeParam);
+  const t = locale === "sr" ? sr : en;
+  const { title, description, keywords, ogLocale, ogAlternateLocale } =
+    t.metadata;
+
+  return {
+    title,
+    description,
+    keywords,
+    openGraph: {
+      type: "website",
+      siteName: "PeyClub",
+      locale: ogLocale,
+      alternateLocale: ogAlternateLocale,
+      title,
+      description,
+      url: `https://peyclub.com/${locale}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
 }
 
 export default async function LocaleLayout({

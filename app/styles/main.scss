@@ -52,6 +52,12 @@ p {
 
 .section {
   padding: 8rem 10rem;
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out 300ms;
+
+  &.in-view {
+    opacity: 1;
+  }
 
   @include respond-below(lg) {
     padding-left: 6.4rem;
