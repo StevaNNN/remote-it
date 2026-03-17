@@ -76,18 +76,21 @@ const sr: LocaleDictionary = {
   whoSection: {
     title: "Za koga je",
     paragraph: "Napravljeno za svaki biznis gde su brzina i iskustvo bitni.",
-    slide1Title: "Restorani i kafići",
+    slide1Title: "Restorani & kafići",
     slide1FlipText:
       "Smanjite vreme naručivanja i plaćanja do 30-40%, povećajte obrt stolova i omogućite osoblju da se fokusira na uslugu umesto na transakcije.",
-    slide2Title: "Barovi i noćni život",
+    slide2Title: "Barovi & noćni život",
     slide2FlipText:
       "Omogućite brže naručivanje pića, trenutno plaćanje i glatkiji rad u špicu sa manje redova i propuštenih narudžbina.",
-    slide3Title: "Stadioni i arene",
+    slide3Title: "Stadioni i& arene",
     slide3FlipText:
       "Upravljajte velikim obimom narudžbina i plaćanja tokom vršnih trenutaka uz smanjenje redova i povećanje završenih transakcija.",
-    slide4Title: "Hoteli i rizorti",
+    slide4Title: "Hoteli & rizorti",
     slide4FlipText:
       "Pojednostavite naručivanje i plaćanja u okviru objekta — restorani, barovi, bazeni i sobna usluga — sve sa jedne platforme.",
+    slide5Title: "Retail & Shopping",
+    slide5FlipText:
+      "Enhance the shopping experience with personalized style and size recommendations, helping customers find the right fit and products faster.",
   },
   customerSection: {
     title: "Put kupca",

@@ -83,6 +83,9 @@ const en = {
     slide4Title: "Hotels & Resorts",
     slide4FlipText:
       "Simplify on-property ordering and payments across restaurants, bars, pools, and room services — all from one platform.",
+    slide5Title: "Retail & Shopping",
+    slide5FlipText:
+      "Enhance the shopping experience with personalized style and size recommendations, helping customers find the right fit and products faster.",
   },
   customerSection: {
     title: "Customer Journey",

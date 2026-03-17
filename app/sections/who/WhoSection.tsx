@@ -7,6 +7,7 @@ import restaurantsCafes from "@/app/resources/imgs/restaurants-cafes.png";
 import barsNightlife from "@/app/resources/imgs/bars-nightlife.png";
 import stadiumsArenas from "@/app/resources/imgs/stadiums-arenas.png";
 import hotelsResorts from "@/app/resources/imgs/hotels-resorts.png";
+import shoppingRetail from "@/app/resources/imgs/retailAndShopping.png";
 
 export interface WhoSectionProps {
   t: LocaleDictionary;
@@ -32,6 +33,11 @@ const sectionCardData = (t: LocaleDictionary) => [
     image: hotelsResorts,
     title: t.whoSection.slide4Title,
     flipText: t.whoSection.slide4FlipText,
+  },
+  {
+    image: shoppingRetail,
+    title: t.whoSection.slide5Title,
+    flipText: t.whoSection.slide5FlipText,
   },
 ];
 

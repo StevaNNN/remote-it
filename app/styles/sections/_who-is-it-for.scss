@@ -10,7 +10,7 @@
 
     .section-cards {
       gap: 2.4rem;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       display: grid;
 
       @include respond-below(1350) {
@@ -27,11 +27,13 @@
     }
 
     .who-card {
-      min-width: 100%;
       aspect-ratio: 3 / 4;
       perspective: 800px;
       cursor: pointer;
-      height: 357px;
+
+      @include respond-above(1440) {
+        max-width: unset;
+      }
 
       @include respond-below(1350) {
         min-width: 40rem;
@@ -128,6 +130,7 @@
       right: 2rem;
       color: $bg-color-inverse;
       z-index: 1;
+      white-space: nowrap;
 
       @include respond-below(xs) {
         bottom: 1.2rem;
