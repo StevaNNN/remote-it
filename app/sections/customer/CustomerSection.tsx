@@ -1,12 +1,6 @@
-import Image from "next/image";
 import Text from "@/app/components/Text";
 import { LocaleDictionary } from "@/app/lib/i18n/types";
 import { FC } from "react";
-
-import c1 from "@/app/resources/imgs/cj1.png";
-import c2 from "@/app/resources/imgs/cj2.png";
-import c3 from "@/app/resources/imgs/cj3.png";
-import c4 from "@/app/resources/imgs/cj4.png";
 
 import Slider, { SliderSlideProps } from "@/app/components/Slider";
 
@@ -16,22 +10,22 @@ export interface CustomerSectionProps {
 
 const sliderData = (t: LocaleDictionary): SliderSlideProps[] => [
   {
-    img: c1,
+    img: "/imgs/cj1.png",
     title: t.customerSection.slide1.title,
     paragraph: t.customerSection.slide1.paragraph,
   },
   {
-    img: c2,
+    img: "/imgs/cj2.png",
     title: t.customerSection.slide2.title,
     paragraph: t.customerSection.slide2.paragraph,
   },
   {
-    img: c3,
+    img: "/imgs/cj3.png",
     title: t.customerSection.slide3.title,
     paragraph: t.customerSection.slide3.paragraph,
   },
   {
-    img: c4,
+    img: "/imgs/cj4.png",
     title: t.customerSection.slide4.title,
     paragraph: t.customerSection.slide4.paragraph,
   },

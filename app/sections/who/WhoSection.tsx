@@ -1,13 +1,7 @@
+import { FC } from "react";
 import Image from "next/image";
 import Text from "@/app/components/Text";
 import { LocaleDictionary } from "@/app/lib/i18n/types";
-import { FC } from "react";
-
-import restaurantsCafes from "@/app/resources/imgs/restaurants-cafes.png";
-import barsNightlife from "@/app/resources/imgs/bars-nightlife.png";
-import stadiumsArenas from "@/app/resources/imgs/stadiums-arenas.png";
-import hotelsResorts from "@/app/resources/imgs/hotels-resorts.png";
-import shoppingRetail from "@/app/resources/imgs/retailAndShopping.png";
 
 export interface WhoSectionProps {
   t: LocaleDictionary;
@@ -15,27 +9,27 @@ export interface WhoSectionProps {
 
 const sectionCardData = (t: LocaleDictionary) => [
   {
-    image: restaurantsCafes,
+    image: "/imgs/restaurants-cafes.png",
     title: t.whoSection.slide1Title,
     flipText: t.whoSection.slide1FlipText,
   },
   {
-    image: barsNightlife,
+    image: "/imgs/bars-nightlife.png",
     title: t.whoSection.slide2Title,
     flipText: t.whoSection.slide2FlipText,
   },
   {
-    image: stadiumsArenas,
+    image: "/imgs/stadiums-arenas.png",
     title: t.whoSection.slide3Title,
     flipText: t.whoSection.slide3FlipText,
   },
   {
-    image: hotelsResorts,
+    image: "/imgs/hotels-resorts.png",
     title: t.whoSection.slide4Title,
     flipText: t.whoSection.slide4FlipText,
   },
   {
-    image: shoppingRetail,
+    image: "/imgs/retailAndShopping.png",
     title: t.whoSection.slide5Title,
     flipText: t.whoSection.slide5FlipText,
   },

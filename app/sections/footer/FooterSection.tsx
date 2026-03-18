@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { LocaleDictionary } from "@/app/lib/i18n/types";
 import Image from "next/image";
-import LogoSmall from "@/app/resources/logo-small.svg";
 import Link from "next/link";
 import Text from "@/app/components/Text";
 
@@ -79,7 +78,7 @@ const FooterSection: FC<FooterSectionProps> = ({ t }) => {
           </Link>
         ))}
         <div className="flex-1 h-box justify-content-end">
-          <Image src={LogoSmall} alt={t.header.logo} />
+          <Image src={"/logo-small.svg"} alt={t.header.logo} />
         </div>
       </div>
     </footer>

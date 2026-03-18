@@ -40,15 +40,15 @@ export interface TextProps extends Omit<
   fontSize?: TextSize;
 }
 
-const sfRegular = localFont({ src: "../resources/fonts/sf.ttf" });
-const sfItalic = localFont({ src: "../resources/fonts/sf-italic.ttf" });
-const sfBold = localFont({ src: "../resources/fonts/sf-bold.otf" });
+const sfRegular = localFont({ src: "../fonts/sf.ttf" });
+const sfItalic = localFont({ src: "../fonts/sf-italic.ttf" });
+const sfBold = localFont({ src: "../fonts/sf-bold.otf" });
 
 const linecaRegular = localFont({
-  src: "../resources/fonts/lineca-regular.ttf",
+  src: "../fonts/lineca-regular.ttf",
 });
-const linecaBook = localFont({ src: "../resources/fonts/lineca-book.ttf" });
-const linecaBold = localFont({ src: "../resources/fonts/lineca-bold.ttf" });
+const linecaBook = localFont({ src: "../fonts/lineca-book.ttf" });
+const linecaBold = localFont({ src: "../fonts/lineca-bold.ttf" });
 
 const Text: FC<TextProps & PropsWithChildren> = ({
   children,
