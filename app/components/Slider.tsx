@@ -7,7 +7,7 @@ import Image, { StaticImageData } from "next/image";
 import Text from "./Text";
 
 export interface SliderSlideProps {
-  img: StaticImageData | string;
+  img: StaticImageData;
   title: string;
   paragraph: string;
 }

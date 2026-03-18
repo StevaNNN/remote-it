@@ -1,6 +1,12 @@
+import Image from "next/image";
 import Text from "@/app/components/Text";
 import { LocaleDictionary } from "@/app/lib/i18n/types";
 import { FC } from "react";
+
+import e1 from "@/app/resources/imgs/ej1.png";
+import e2 from "@/app/resources/imgs/ej2.png";
+import e3 from "@/app/resources/imgs/ej3.png";
+import e4 from "@/app/resources/imgs/ej4.png";
 
 import Slider, { SliderSlideProps } from "@/app/components/Slider";
 
@@ -10,22 +16,22 @@ export interface EstablishmentSectionProps {
 
 const sliderData = (t: LocaleDictionary): SliderSlideProps[] => [
   {
-    img: "/imgs/ej1.png",
+    img: e1,
     title: t.establishmentSection.slide1.title,
     paragraph: t.establishmentSection.slide1.paragraph,
   },
   {
-    img: "/imgs/ej2.png",
+    img: e2,
     title: t.establishmentSection.slide2.title,
     paragraph: t.establishmentSection.slide2.paragraph,
   },
   {
-    img: "/imgs/ej3.png",
+    img: e3,
     title: t.establishmentSection.slide3.title,
     paragraph: t.establishmentSection.slide3.paragraph,
   },
   {
-    img: "/imgs/ej4.png",
+    img: e4,
     title: t.establishmentSection.slide4.title,
     paragraph: t.establishmentSection.slide4.paragraph,
   },

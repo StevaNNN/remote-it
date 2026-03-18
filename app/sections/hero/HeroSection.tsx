@@ -3,6 +3,7 @@ import { FC } from "react";
 import Image from "next/image";
 
 import Text from "@/app/components/Text";
+import HeroImage from "@/app/resources/imgs/hero.png";
 import { LocaleDictionary } from "@/app/lib/i18n/types";
 import Button from "@/app/components/Button";
 import { routes } from "@/app/routes";
@@ -21,7 +22,7 @@ const HeroSection: FC<HeroSectionProps> = ({ t, locale }) => {
         <div className="image-wrapper">
           <Image
             className="hero-img"
-            src={"/imgs/hero.png"}
+            src={HeroImage}
             alt={t.heroSection.imagAlt}
           />
         </div>
