@@ -1,3 +1,4 @@
+// middleware.ts
 import createMiddleware from "next-intl/middleware";
 import { LOCALES, DEFAULT_LOCALE } from "./app/lib/i18n/locale";
 
