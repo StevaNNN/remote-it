@@ -13,6 +13,7 @@ import {
 } from "@/app/components/ui/dropdown-menu";
 import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { Logo } from "../ui/logo";
 
 const navItems = [
   { id: "services", href: "#services" },
@@ -105,11 +106,8 @@ export default function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-2xl font-bold tracking-tight"
             >
-              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                REMOTE-IT
-              </span>
+              <Logo fill={theme === "dark" ? "#c9ba82" : undefined} />
             </motion.div>
 
             <nav className="hidden md:flex items-center space-x-1">
