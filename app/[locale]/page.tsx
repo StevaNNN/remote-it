@@ -1,30 +1,19 @@
-import { resolveLocale } from "@/app/lib/i18n/locale";
-import en from "@/app/lib/i18n/en/en";
-import sr from "@/app/lib/i18n/sr/sr";
-import Header from "../components/sections/Header";
-import Hero from '../components/sections/Hero";
-import Contact from '../components/sections/Contact";
-import About from '../components/sections/About";
-import Projects from '../components/sections/Projects";
-import Services from '../components/sections/Services";
+import About from "@/app/components/sections/About";
+import Contact from "@/app/components/sections/Contact";
+import Header from "@/app/components/sections/Header";
+import Hero from "@/app/components/sections/Hero";
+import Projects from "@/app/components/sections/Projects";
+import Services from "@/app/components/sections/Services";
 
-export default async function Home({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale: localeParam } = await params;
-  const locale = resolveLocale(localeParam);
-  const t = locale === "sr" ? sr : en;
-
+export default async function Home() {
   return (
     <main className="min-h-screen">
-      <Header t={t}/>
-      <Hero t={t}/>
-      <Services t={t}/>
-      <Projects t={t}/>
-      <About t={t}/>
-      <Contact t={t}/>
+      <Header />
+      <Hero />
+      <Services />
+      <Projects />
+      <About />
+      <Contact />
     </main>
   );
 }
