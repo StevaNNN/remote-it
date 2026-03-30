@@ -107,7 +107,7 @@ export default function Header() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <Logo fill={theme === "dark" ? "#c9ba82" : undefined} />
+              <Logo />
             </motion.div>
 
             <nav className="hidden md:flex items-center space-x-1">
