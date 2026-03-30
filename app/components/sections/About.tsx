@@ -37,7 +37,7 @@ const item = {
 };
 
 const About: FC = () => {
-  const t = useTranslations();
+  const t = useTranslations("about");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 

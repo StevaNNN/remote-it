@@ -41,7 +41,7 @@ const item = {
 };
 
 export default function Services() {
-  const t = useTranslations();
+  const t = useTranslations("services");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 

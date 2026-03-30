@@ -13,7 +13,8 @@ import { Phone, Building2, FileText } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function Contact() {
-  const t = useTranslations();
+  const t = useTranslations("contact");
+  const tf = useTranslations("footer");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [loading, setLoading] = useState(false);
@@ -163,7 +164,7 @@ export default function Contact() {
       <footer className="mt-20 pt-8 border-t border-border">
         <div className="container mx-auto px-4">
           <p className="text-center text-sm text-muted-foreground">
-            {t("../footer.rights")}
+            {tf("rights")}
           </p>
         </div>
       </footer>

@@ -25,7 +25,7 @@ const item = {
 };
 
 export default function Projects() {
-  const t = useTranslations();
+  const t = useTranslations("projects");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 

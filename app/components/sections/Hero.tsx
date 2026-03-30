@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function Hero() {
-  const t = useTranslations();
+  const t = useTranslations("hero");
 
   const handleScrollToServices = () => {
     const servicesSection = document.getElementById("services");
