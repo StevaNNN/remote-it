@@ -1,11 +1,9 @@
 // app/[locale]/layout.tsx
+import type { Metadata } from "next";
 import { resolveLocale, LOCALES } from "@/app/lib/i18n/locale";
 import en from "@/app/lib/i18n/en/en";
 import sr from "@/app/lib/i18n/sr/sr";
-import { Suspense } from "react";
-import Header from "@/app/components/Header";
-import FooterSection from "@/app/sections/footer/FooterSection";
-import type { Metadata } from "next";
+import { ThemeProvider } from "../components/providers/theme-provider";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -14,32 +12,29 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }): Promise<Metadata> {
-  const { locale: localeParam } = await params;
-  const locale = resolveLocale(localeParam);
-  const t = locale === "sr" ? sr : en;
-  const { title, description, keywords, ogLocale, ogAlternateLocale } =
-    t.metadata;
+  const awaitedParams = await params;
+  const { locale } = awaitedParams;
+
+  const titles = {
+    sr: "REMOTE-IT | Softverska Agencija",
+    en: "REMOTE-IT | Software Agency",
+  };
+
+  const descriptions = {
+    sr: "Opis na srpskom...",
+    en: "Description in English...",
+  };
+
+  const title = titles[locale as keyof typeof titles] || titles.en;
+  const description =
+    descriptions[locale as keyof typeof descriptions] || descriptions.en;
 
   return {
     title,
     description,
-    keywords,
-    openGraph: {
-      type: "website",
-      siteName: "PeyClub",
-      locale: ogLocale,
-      alternateLocale: ogAlternateLocale,
-      title,
-      description,
-      url: `https://peyclub.com/${locale}`,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
+    openGraph: { title, description, locale },
   };
 }
 
@@ -55,12 +50,13 @@ export default async function LocaleLayout({
   const t = locale === "sr" ? sr : en;
 
   return (
-    <>
-      <Suspense>
-        <Header locale={locale} t={t} />
-      </Suspense>
-      <main className="v-box">{children}</main>
-      <FooterSection t={t} />
-    </>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem={false}
+      disableTransitionOnChange={false}
+    >
+      {children}
+    </ThemeProvider>
   );
 }

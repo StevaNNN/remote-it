@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { DEFAULT_LOCALE } from "./lib/i18n/locale";
-import "./styles/main.scss";
+import { Inter } from "next/font/google";
 
 export const metadata: Metadata = {
   title: {
@@ -31,6 +31,8 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+const inter = Inter({ subsets: ["latin"] });
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={DEFAULT_LOCALE}>
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
