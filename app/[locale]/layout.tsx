@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "../../components/providers/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { LOCALES, resolveLocale } from "@/lib/i18n/locale";
+import { LOCALES, resolveLocale } from "@/src/i18n/locale";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));

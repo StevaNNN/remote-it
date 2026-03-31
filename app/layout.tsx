@@ -1,4 +1,4 @@
-import { DEFAULT_LOCALE } from "@/lib/i18n/locale";
+import { DEFAULT_LOCALE } from "@/src/i18n/locale";
 import "./globals.css";
 
 import { Inter } from "next/font/google";
