@@ -2,11 +2,11 @@
 import { getRequestConfig } from "next-intl/server";
 import { resolveLocale } from "./locale";
 
-export default getRequestConfig(async ({ requestLocale }) => {
-  const locale = resolveLocale(await requestLocale);
+export default getRequestConfig(async ({ locale }) => {
+  const resolved = resolveLocale(locale);
 
   return {
-    locale,
-    messages: (await import(`../../messages/${locale}.json`)).default,
+    locale: resolved,
+    messages: (await import(`../../messages/${resolved}.json`)).default,
   };
 });
