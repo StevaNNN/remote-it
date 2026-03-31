@@ -1,3 +1,4 @@
+// app/layout.tsx
 import { DEFAULT_LOCALE } from "@/src/i18n/locale";
 import "./globals.css";
 
