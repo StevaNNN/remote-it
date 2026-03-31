@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "services": "Usluge",
+    "projects": "Projekti",
+    "about": "O Nama",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Revolucionišemo Digitalnu Budućnost",
+    "subtitle": "Kreiramo savremene web i mobilne aplikacije fokusirane na performanse, pristupačnost i korisničko iskustvo",
+    "cta": "Pogledajte Usluge",
+    "scrollDown": "Skroluj dole"
+  },
+  "services": {
+    "title": "Naše Usluge",
+    "subtitle": "Kompletan spektar IT usluga za vašu digitalnu transformaciju",
+    "consulting": {
+      "title": "IT Konsalting",
+      "description": "Stručno savetovanje i strateška rešenja za vaše IT izazove"
+    },
+    "webDevelopment": {
+      "title": "Razvoj Web Sajta",
+      "description": "Moderni, responzivni web sajtovi izgrađeni prema najnovijim standardima"
+    },
+    "applications": {
+      "title": "Web i Mobilne Aplikacije",
+      "description": "Skalabilne aplikacije sa fokusiranjem na performanse i korisničko iskustvo"
+    },
+    "accessibility": {
+      "title": "A11y Konsalting",
+      "description": "Auditi i poboljšanja pristupačnosti za inkluzivne digitalne proizvode"
+    }
+  },
+  "projects": {
+    "title": "Naši Projekti",
+    "subtitle": "Pogledajte naša nedavna ostvarenja i uspešne saradnje",
+    "comingSoon": "Projekti će uskoro biti dodati"
+  },
+  "about": {
+    "title": "O Nama",
+    "subtitle": "Strast ka izuzetnosti u svakom projektu",
+    "whoWeAre": "Ko Smo Mi",
+    "whoWeAreText": "REMOTE-IT je softverska agencija specijalizovana za frontend razvoj, sa fokusom na kreiranje visokokvalitetnih, pristupačnih i performantnih digitalnih rešenja.",
+    "whatWeDo": "Šta Radimo",
+    "whatWeDoText": "Specijalizovani smo za frontend razvoj, dizajn sisteme (Figma → Storybook), i audite pristupačnosti. Naš cilj je da pomognemo kompanijama da digitalno rastu kroz savremene web tehnologije.",
+    "expertise": {
+      "title": "Naša Ekspertiza",
+      "frontend": "Frontend Razvoj",
+      "frontendDesc": "React, Next.js, TypeScript, Tailwind CSS",
+      "designSystems": "Dizajn Sistemi",
+      "designSystemsDesc": "Figma do Storybook implementacije",
+      "accessibility": "Pristupačnost",
+      "accessibilityDesc": "WCAG auditi i poboljšanja"
+    }
+  },
+  "contact": {
+    "title": "Kontaktirajte Nas",
+    "subtitle": "Spremni smo da razgovaramo o vašem projektu",
+    "form": {
+      "fullName": "Puno Ime",
+      "email": "Email",
+      "message": "Poruka",
+      "send": "Pošalji Poruku",
+      "sending": "Šaljem...",
+      "success": "Poruka uspešno poslata!",
+      "error": "Greška pri slanju. Pokušajte ponovo."
+    },
+    "info": {
+      "phone": "Telefon",
+      "companyId": "Matični Broj",
+      "pib": "PIB"
+    }
+  },
+  "footer": {
+    "rights": "© 2026 REMOTE-IT. Sva prava zadržana."
+  },
+  "theme": {
+    "toggle": "Promeni temu",
+    "light": "Svetla",
+    "dark": "Tamna"
+  },
+  "language": {
+    "toggle": "Promeni jezik",
+    "sr": "Srpski",
+    "en": "English"
+  }
+}
