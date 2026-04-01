@@ -7,13 +7,15 @@ import Services from "@/components/sections/Services";
 
 export default async function Home() {
   return (
-    <main className="min-h-screen">
+    <>
       <Header />
-      <Hero />
-      <Services />
-      <Projects />
-      <About />
-      <Contact />
-    </main>
+      <main className="min-h-screen">
+        <Hero />
+        <Services />
+        <Projects />
+        <About />
+        <Contact />
+      </main>
+    </>
   );
 }
